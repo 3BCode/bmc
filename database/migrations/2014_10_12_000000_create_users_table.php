@@ -15,6 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('no_hp')->nullable();
+            $table->string('jns_kelamin')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('tmp_pengabdian')->nullable();
+            $table->string('gln_darah')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
+            $table->enum('role', ['superadmin', 'admin', 'relawan', 'pasien'])->nullable();
+            $table->string('level')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

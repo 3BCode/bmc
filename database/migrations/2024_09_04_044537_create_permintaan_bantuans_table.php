@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_pasien');
             $table->text('alamat_pasien')->nullable();
             $table->string('kontak_pasien')->nullable();
+            $table->text('kebutuhan')->nullable();
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
             $table->enum('status_permohonan', ['menunggu', 'dalam proses', 'selesai', 'ditolak'])->default('menunggu');

@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('bantuan_kemanusiaans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('judul_permohonan');
+            $table->text('deskripsi_permohonan');
+            $table->enum('kategori_bantuan', ['bencana', 'sosial', 'kebutuhan_mendesak']);
+            $table->string('lokasi_bantuan')->nullable();
+            $table->decimal('target_donasi', 15, 2)->nullable();
+            $table->decimal('donasi_terkumpul', 15, 2)->default(0); 
+            $table->enum('status_donasi', ['dibuka', 'ditutup', 'target_tercapai', 'expired'])->default('dibuka'); 
+            $table->date('donasi_deadline')->nullable();
+            $table->enum('status_permohonan', ['dalam proses', 'selesai', 'ditolak'])->default('dalam proses');
             $table->timestamps();
         });
     }

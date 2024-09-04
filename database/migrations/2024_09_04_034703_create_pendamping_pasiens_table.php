@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('pendamping_pasiens', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('permintaan_bantuan_id')->constrained('permintaan_bantuans')->onDelete('cascade');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_selesai')->nullable();
+            $table->enum('status_pendampingan', ['berlangsung', 'selesai'])->default('berlangsung');
+            $table->text('catatan_pendampingan')->nullable();
             $table->timestamps();
         });
     }

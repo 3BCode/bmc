@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('donor_darahs', function (Blueprint $table) {
             $table->id();
+            $table->string('judul_kegiatan');
+            $table->text('deskripsi_kegiatan')->nullable();
+            $table->string('lokasi_kegiatan');
+            $table->date('tanggal_kegiatan');
+            $table->time('waktu_mulai')->nullable();
+            $table->time('waktu_selesai')->nullable();
+            $table->integer('jumlah_pendaftar')->default(0);
+            $table->integer('kebutuhan_darah')->nullable();
+            $table->string('golongan_darah')->nullable();
+            $table->boolean('notifikasi_pengingat')->default(false);
             $table->timestamps();
         });
     }

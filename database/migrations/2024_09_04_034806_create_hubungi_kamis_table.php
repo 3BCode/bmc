@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('hubungi_kamis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->string('no_hp');
+            $table->text('pesan');
             $table->timestamps();
         });
     }

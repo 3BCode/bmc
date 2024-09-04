@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('zakat_infaqs', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('gambar_qris');
+            $table->text('deskripsi');
+            $table->text('isi');
             $table->timestamps();
         });
     }

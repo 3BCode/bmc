@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ZakatInfaq extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'judul',
+        'gambar_qris',
+        'deskripsi',
+        'isi',
+    ];
 }

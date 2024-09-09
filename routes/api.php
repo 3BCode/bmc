@@ -5,6 +5,7 @@ use App\Http\Controllers\API\HubungiKamiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\ZakatInfaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('donorDarah', [DonorDarahController::class, 'fetch']);
     Route::get('hubungiKami', [HubungiKamiController::class, 'fetch']);
+    Route::get('zakatInfaq', [ZakatInfaqController::class, 'fetch']);
 });
 
 Route::post('login', [UserController::class, 'login']);

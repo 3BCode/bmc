@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\DonorDarahController;
+use App\Http\Controllers\API\HubungiKamiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\UserController;
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('user/photo/update', [UserController::class, 'updatePhoto']);
 
     Route::get('donorDarah', [DonorDarahController::class, 'fetch']);
+    Route::get('hubungiKami', [HubungiKamiController::class, 'fetch']);
 });
 
 Route::post('login', [UserController::class, 'login']);
